@@ -1,0 +1,5 @@
+/home/russ/CWorkspace/Socket/cmake-build-debug/CMakeFiles/Socket.dir
+/home/russ/CWorkspace/Socket/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/russ/CWorkspace/Socket/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/russ/CWorkspace/Socket/cmake-build-debug/CMakeFiles/Socket_autogen_timestamp_deps.dir
+/home/russ/CWorkspace/Socket/cmake-build-debug/CMakeFiles/Socket_autogen.dir
