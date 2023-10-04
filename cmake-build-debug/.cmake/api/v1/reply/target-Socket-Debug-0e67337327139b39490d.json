@@ -332,17 +332,17 @@
 			},
 			{
 				"backtrace" : 9,
-				"fragment" : "/usr/lib/libQt6Widgets.so.6.5.2",
+				"fragment" : "/usr/lib/libQt6Widgets.so.6.5.3",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 14,
-				"fragment" : "/usr/lib/libQt6Gui.so.6.5.2",
+				"fragment" : "/usr/lib/libQt6Gui.so.6.5.3",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 19,
-				"fragment" : "/usr/lib/libQt6Core.so.6.5.2",
+				"fragment" : "/usr/lib/libQt6Core.so.6.5.3",
 				"role" : "libraries"
 			},
 			{
