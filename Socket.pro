@@ -16,7 +16,6 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     log/*.cpp \
-    Thread.cpp \
     Sender.cpp \
     download.cpp \
     upload.cpp
