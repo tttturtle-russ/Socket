@@ -28,69 +28,69 @@ void get_timestamp(char* buf){
 
 void logger::info(const char *fmt, ...) {
     if (LOG_INFO < this->level) {
-        return;
+        return;  // 如果日志级别低于INFO，不执行任何操作。
     }
     std::string msg;
     va_list ap;
     va_start(ap, fmt);
     char buf[1024];
     char timestamp[32];
-    get_timestamp(timestamp);
-    vsprintf(buf,fmt,ap);
-    msg = std::string(timestamp) + " "+level_strings[LOG_INFO];
-    for (const auto &item: this->stream){
+    get_timestamp(timestamp); // 获取当前时间戳
+    vsprintf(buf, fmt, ap); // 使用可变参数格式化日志消息。
+    msg = std::string(timestamp) + " " + level_strings[LOG_INFO]; // 创建带时间戳和日志级别的日志消息头。
+    for (const auto &item : this->stream) {
         if (item) {
-            *item << msg << "：" <<  buf ;
+            *item << msg << "：" << buf; // 将日志消息写入每个输出流。
         }
     }
-    std::cout << level_colors[LOG_INFO] << msg << "\x1b[0m：" << buf;
+    std::cout << level_colors[LOG_INFO] << msg << "\x1b[0m：" << buf; // 使用颜色打印日志消息到控制台。
     msg += "：";
     msg += buf;
-    emit logInfo(QString::fromStdString(msg));
+    emit logInfo(QString::fromStdString(msg)); // 发出带有消息的logInfo信号。
 }
 
 void logger::error(const char *fmt, ...) {
     if (LOG_ERROR < this->level) {
-        return ;
+        return; // 如果日志级别低于ERROR，不执行任何操作。
     }
     std::string msg;
     va_list ap;
     va_start(ap, fmt);
     char buf[1024];
     char timestamp[32];
-    get_timestamp(timestamp);
-    vsprintf(buf,fmt,ap);
-    msg = std::string(timestamp) + " "+level_strings[LOG_ERROR];
-    for (const auto &item: this->stream){
+    get_timestamp(timestamp); // 获取当前时间戳
+    vsprintf(buf, fmt, ap); // 使用可变参数格式化日志消息。
+    msg = std::string(timestamp) + " " + level_strings[LOG_ERROR]; // 创建带时间戳和日志级别的日志消息头。
+    for (const auto &item : this->stream) {
         if (item) {
-            *item << msg << "：" <<  buf ;
+            *item << msg << "：" << buf; // 将日志消息写入每个输出流。
         }
     }
-    std::cout << level_colors[LOG_ERROR] << msg << "\x1b[0m：" << buf ;
+    std::cout << level_colors[LOG_ERROR] << msg << "\x1b[0m：" << buf; // 使用颜色打印日志消息到控制台。
     msg += "：";
     msg += buf;
-    emit logError(QString::fromStdString(msg));
+    emit logError(QString::fromStdString(msg)); // 发出带有消息的logError信号。
 }
 
 void logger::warn(const char *fmt, ...) {
     if (LOG_WARN < this->level) {
-        return ;
+        return; // 如果日志级别低于WARN，不执行任何操作。
     }
     std::string msg;
     va_list ap;
     va_start(ap, fmt);
     char buf[1024];
     char timestamp[32];
-    get_timestamp(timestamp);
-    vsprintf(buf,fmt,ap);
-    msg = std::string(timestamp) + " "+level_strings[LOG_WARN];
-    for (const auto &item: this->stream){
+    get_timestamp(timestamp); // 获取当前时间戳
+    vsprintf(buf, fmt, ap); // 使用可变参数格式化日志消息。
+    msg = std::string(timestamp) + " " + level_strings[LOG_WARN]; // 创建带时间戳和日志级别的日志消息头。
+    for (const auto &item : this->stream) {
         if (item) {
-            *item << msg << "：" <<  buf ;
+            *item << msg << "：" << buf; // 将日志消息写入每个输出流。
         }
     }
-    std::cout << level_colors[LOG_WARN] << msg << "\x1b[0m：" << buf ;
+    std::cout << level_colors[LOG_WARN] << msg << "\x1b[0m：" << buf; // 使用颜色打印日志消息到控制台。
     msg += "：";
     msg += buf;
-    emit logWarn(QString::fromStdString(msg));
+    emit logWarn(QString::fromStdString(msg)); // 发出带有消息的logWarn信号。
 }
